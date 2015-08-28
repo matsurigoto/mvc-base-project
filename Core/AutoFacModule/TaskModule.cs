@@ -20,7 +20,6 @@ namespace Core.AutofacModule
         protected override void Load(Autofac.ContainerBuilder builder)
         {
             var assemblies = Assembly.GetExecutingAssembly();
-
             builder.RegisterAssemblyTypes(assemblies).As<IRunAfterEachRequest>().InstancePerRequest();
             builder.RegisterAssemblyTypes(assemblies).As<IRunAtStartup>();
             builder.RegisterAssemblyTypes(assemblies).As<IRunOnEachRequest>().InstancePerRequest();
