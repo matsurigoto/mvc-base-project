@@ -1,5 +1,5 @@
 ﻿using System;
-//using System.Data.Entity;
+using System.Data.Entity;
 
 namespace Core.Common.Repository
 {
@@ -16,8 +16,7 @@ namespace Core.Common.Repository
         /// <summary>
         /// 取得目前的Contex。
         /// </summary>
-        //TODO: 加入資料庫連線的時候需要移除註解
-        //DbContext DbContext { get; }
+        DbContext DbContext { get; }
 
         /// <summary>
         /// 取得某一個Entity的Repository。
