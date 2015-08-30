@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Mapper\IHaveCustomMapping.cs" />
     <Compile Include="Mapper\IMapFrom.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IRepositoryQuery.cs" />
+    <Compile Include="Repository\IUnitOfWork.cs" />
     <Compile Include="Task\IRunAfterEachRequest.cs" />
     <Compile Include="Task\IRunAtStartup.cs" />
     <Compile Include="Task\IRunOnEachRequest.cs" />

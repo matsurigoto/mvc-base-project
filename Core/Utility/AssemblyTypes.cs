@@ -70,14 +70,8 @@ namespace Core.Utility
                     yield return assembly.GetName();
                 }
             }
-
             AppDomain.Unload(tempDomain);
         }
-
-        /// <summary>
-        /// 設定判斷Assembly要以不區分英文大小寫方式去比對
-        /// </summary>
-        public const StringComparison AssemblyFileComparison = StringComparison.OrdinalIgnoreCase;
 
         /// <summary>
         /// 判斷某個檔案名稱是否符合Assembly
@@ -89,5 +83,10 @@ namespace Core.Utility
             string extension = System.IO.Path.GetExtension(file);
             return string.Equals(extension, ".dll", AssemblyFileComparison) || string.Equals(extension, ".exe", AssemblyFileComparison);
         }
+
+        /// <summary>
+        /// 設定判斷Assembly要以不區分英文大小寫方式去比對
+        /// </summary>
+        public const StringComparison AssemblyFileComparison = StringComparison.OrdinalIgnoreCase;
     }
 }
