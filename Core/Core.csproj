@@ -83,6 +83,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoFacModule\TaskModule.cs" />
     <Compile Include="Mapper\AutoMapperConfig.cs" />
     <Compile Include="Mapper\AutoMapperExtension.cs" />
     <Compile Include="Utility\AssemblyTypes.cs" />
