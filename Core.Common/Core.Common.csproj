@@ -39,12 +39,22 @@
     <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mapper\IHaveCustomMapping.cs" />
     <Compile Include="Mapper\IMapFrom.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IRepositoryQuery.cs" />
+    <Compile Include="Repository\IUnitOfWork.cs" />
     <Compile Include="Task\IRunAfterEachRequest.cs" />
     <Compile Include="Task\IRunAtStartup.cs" />
     <Compile Include="Task\IRunOnEachRequest.cs" />
