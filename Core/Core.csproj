@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="Alert\_Alert.cshtml" />
+    <None Include="Utility\Alert\_Alert.cshtml" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -112,9 +112,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alert\AlertDecoratorActionResult.cs" />
-    <Compile Include="Alert\AlertExtension.cs" />
-    <Compile Include="Alert\AlertViewModel.cs" />
+    <Compile Include="Utility\Alert\AlertDecoratorActionResult.cs" />
+    <Compile Include="Utility\Alert\AlertExtension.cs" />
+    <Compile Include="Utility\Alert\AlertViewModel.cs" />
     <Compile Include="AutoFacModule\TaskModule.cs" />
     <Compile Include="Base\CoreViewModelBase.cs" />
     <Compile Include="Base\SearchViewModelBase.cs" />
