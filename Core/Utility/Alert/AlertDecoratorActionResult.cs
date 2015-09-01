@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Core.Alerts
+namespace Core.Utility.Alert
 {
     /// <summary>
     /// 一個Decorator Pattern的ActionResult，讓增加Alert訊息變的方便

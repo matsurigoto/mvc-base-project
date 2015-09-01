@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace Core.Alerts
+namespace Core.Utility.Alert
 {
     /// <summary>
     /// Alert相關的Helper方法，方便呼叫使用

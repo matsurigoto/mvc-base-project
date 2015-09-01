@@ -1,4 +1,4 @@
-﻿namespace Core.Alerts
+﻿namespace Core.Utility.Alert
 {
     /// <summary>
     /// 用來代表一筆需要顯示的Alert資訊ViewModel
