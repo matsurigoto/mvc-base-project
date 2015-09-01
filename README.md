@@ -2,15 +2,15 @@
 >C# MVC Web base project
 
 # language
->1.C#
->2.JavaScript(JQuery,AngluarJS)
->3.CSS(bootstrap)
+>1.C#  
+>2.JavaScript(JQuery,AngluarJS)  
+>3.CSS(bootstrap)  
 
 #author
->Alan Tasi
->Ina Lai
->Vita Wang
->Duran Hsieh
+>Alan Tasi  
+>Ina Lai  
+>Vita Wang  
+>Duran Hsieh  
 
 # license
 >This software is provided under the MIT license:
