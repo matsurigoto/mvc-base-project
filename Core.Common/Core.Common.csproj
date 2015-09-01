@@ -60,10 +60,15 @@
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\IRepositoryQuery.cs" />
     <Compile Include="Repository\IUnitOfWork.cs" />
+    <Compile Include="Service\IFrontViewModel.cs" />
+    <Compile Include="Service\IService.cs" />
     <Compile Include="Task\IRunAfterEachRequest.cs" />
     <Compile Include="Task\IRunAtStartup.cs" />
     <Compile Include="Task\IRunOnEachRequest.cs" />
     <Compile Include="Task\IRunOnError.cs" />
+    <Compile Include="ValidationError\IBaseError.cs" />
+    <Compile Include="ValidationError\IValidationDictionary.cs" />
+    <Compile Include="ValidationError\IValidationErrors.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
