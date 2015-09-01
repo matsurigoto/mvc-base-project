@@ -57,6 +57,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -95,6 +98,8 @@
     <Compile Include="Alert\AlertExtension.cs" />
     <Compile Include="Alert\AlertViewModel.cs" />
     <Compile Include="AutoFacModule\TaskModule.cs" />
+    <Compile Include="Base\CoreViewModelBase.cs" />
+    <Compile Include="Base\SearchViewModelBase.cs" />
     <Compile Include="Mapper\AutoMapperConfig.cs" />
     <Compile Include="Mapper\AutoMapperExtension.cs" />
     <Compile Include="Repository\EFGenericRepository.cs" />
