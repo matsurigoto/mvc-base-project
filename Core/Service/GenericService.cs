@@ -9,10 +9,10 @@ using Core.Common.Business;
 using Core.Common.Repository;
 using Core.Common.Service;
 using Core.Mapper;
-using Core.Paging;
-using Core.Paging.Extension;
-using Core.ValidationError;
-using Core.ValidationError.Exception;
+using Core.Utility.Paging;
+using Core.Utility.Paging.Extension;
+using Core.Utility.ValidationError;
+using Core.Utility.ValidationError.Exception;
 
 namespace Core.Service
 {
@@ -39,7 +39,7 @@ namespace Core.Service
         /// <summary>
         /// 處理上傳的檔案邏輯
         /// </summary>
-        protected IHttpFileProcessBusiness httpFileProcess;
+        //protected IHttpFileProcessBusiness httpFileProcess;
 
         /// <summary>
         /// 處理刪除多對多關係的邏輯
@@ -53,11 +53,11 @@ namespace Core.Service
         /// <param name="inHttpFileProcess">處理上傳檔案的實例</param>
         /// <param name="inDeleteProcess">處理刪除的實例</param>
         public GenericService(IUnitOfWork inDb,
-            IHttpFileProcessBusiness inHttpFileProcess,
+            //IHttpFileProcessBusiness inHttpFileProcess,
             IDeleteManyToManyProcess inDeleteProcess)
         {
             db = inDb;
-            httpFileProcess = inHttpFileProcess;
+            //httpFileProcess = inHttpFileProcess;
             deleteProcess = inDeleteProcess;
         }
 
@@ -211,7 +211,7 @@ namespace Core.Service
         {
             if (ValidationDictionary.IsValid)
             {
-                httpFileProcess.SaveHttpPostFile(viewModel, Core.Utility.Config.DoPath);
+                //httpFileProcess.SaveHttpPostFile(viewModel, Core.Utility.Config.DoPath);
 
                 var entity = db.Repository<T>().Read(wherePredicate);
 
@@ -236,7 +236,7 @@ namespace Core.Service
         {
             if (ValidationDictionary.IsValid)
             {
-                httpFileProcess.SaveHttpPostFile(viewModel, Core.Utility.Config.DoPath);
+                //httpFileProcess.SaveHttpPostFile(viewModel, Core.Utility.Config.DoPath);
 
                 var entity = db.Repository<T>().Read(wherePredicate);
 
@@ -380,7 +380,7 @@ namespace Core.Service
         /// <param name="viewModel">ViewModel的Reference</param>
         protected virtual void CreateSingleViewModel<TViewModel>(TViewModel viewModel)
         {
-            httpFileProcess.SaveHttpPostFile(viewModel, Core.Utility.Config.DoPath);
+            //httpFileProcess.SaveHttpPostFile(viewModel, Core.Utility.Config.DoPath);
 
             var entity = viewModel.ToModel<T>();
 
@@ -394,7 +394,7 @@ namespace Core.Service
         /// <param name="viewModel">ViewModel的Reference</param>
         protected virtual void CreateSingleViewModel<TViewModel>(TViewModel viewModel, string savePath)
         {
-            httpFileProcess.SaveHttpPostFile(viewModel, savePath);
+            //httpFileProcess.SaveHttpPostFile(viewModel, savePath);
 
             var entity = viewModel.ToModel<T>();
 

@@ -113,6 +113,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\DeleteManyToManyProcess.cs" />
+    <Compile Include="Service\GenericService.cs" />
     <Compile Include="Utility\Alert\AlertDecoratorActionResult.cs" />
     <Compile Include="Utility\Alert\AlertExtension.cs" />
     <Compile Include="Utility\Alert\AlertViewModel.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="Repository\EFUnitOfWork.cs" />
     <Compile Include="Repository\RepositoryQuery.cs" />
     <Compile Include="Utility\AssemblyTypes.cs" />
+    <Compile Include="Utility\Config.cs" />
     <Compile Include="Utility\ExportExcel\ExportExcelActionResult.cs" />
     <Compile Include="Utility\ExportExcel\ExportExcelUsingNPOIActionResult.cs" />
     <Compile Include="Utility\ExportExcel\Extension\IEnumerableExtension.cs" />
@@ -134,6 +137,13 @@
     <Compile Include="Utility\Paging\Extension\DynamicQueryExtension.cs" />
     <Compile Include="Utility\Paging\PagingHelper.cs" />
     <Compile Include="Utility\Paging\SearchViewModelProcess.cs" />
+    <Compile Include="Utility\ReflectionHelper.cs" />
+    <Compile Include="Utility\ValidationError\Exception\DatabaseValidationErrors.cs" />
+    <Compile Include="Utility\ValidationError\Exception\ValidationErrors.cs" />
+    <Compile Include="Utility\ValidationError\GeneralError.cs" />
+    <Compile Include="Utility\ValidationError\ModelStateWrapper.cs" />
+    <Compile Include="Utility\ValidationError\PropertyError.cs" />
+    <Compile Include="Utility\ValidationError\ValidationErrorExtension.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
