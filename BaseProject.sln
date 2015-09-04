@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseProject.Front", "BaseProject.Front\BaseProject.Front.csproj", "{6C77FC38-E0D5-4F2D-8B26-40CA6150D59C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C9B0C421-B7C4-4101-803D-EBD4264219EB} = {C9B0C421-B7C4-4101-803D-EBD4264219EB}
+		{7A0A682A-0D95-4131-856B-AFD3447F1101} = {7A0A682A-0D95-4131-856B-AFD3447F1101}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Common", "Core.Common\Core.Common.csproj", "{C9B0C421-B7C4-4101-803D-EBD4264219EB}"
 EndProject
