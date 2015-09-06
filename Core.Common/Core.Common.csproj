@@ -54,6 +54,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\ISearchFormViewModelBase.cs" />
@@ -65,6 +66,10 @@
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\IRepositoryQuery.cs" />
     <Compile Include="Repository\IUnitOfWork.cs" />
+    <Compile Include="Security\EnumLoginStatus.cs" />
+    <Compile Include="Security\IResourceOperationCollection.cs" />
+    <Compile Include="Security\ResourceOperation.cs" />
+    <Compile Include="Security\ResourceOperationEnum.cs" />
     <Compile Include="Service\IFrontViewModel.cs" />
     <Compile Include="Service\IService.cs" />
     <Compile Include="Task\IRunAfterEachRequest.cs" />
