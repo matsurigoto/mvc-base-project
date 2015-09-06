@@ -1,8 +1,9 @@
 ﻿using System.Web.Mvc;
+using Core.Base;
 
 namespace BaseProject.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : CoreBaseController
     {
         // GET: Home
         public ActionResult Index()
