@@ -15,12 +15,12 @@ using MvcSiteMapProvider;
 using System.Diagnostics;
 using Core.Common.Security;
 using Core.Base;
-using HotSpring.Common.Service;
-using HotSpring.Admin.ViewModels.CodeMain;
-using HotSpring.Model;
+using BaseProject.Admin.Service;
+using BaseProject.Admin.ViewModels.CodeMain;
+using BaseProject.Admin.Models;
 
 
-namespace HotSpring.Admin.Controllers
+namespace BaseProject.Admin.Controllers
 {
     public class CodeMainController : CoreBaseController
     {
@@ -29,12 +29,11 @@ namespace HotSpring.Admin.Controllers
         public CodeMainController(ICodeMainService inService)
         {
             service = inService;
-
             service.InitialiseIValidationDictionary(new ModelStateWrapper(this.ModelState));
         }
 
         // GET: CodeMain
-        public ActionResult Index(HotSpring.Admin.ViewModels.CodeMain.Index  searchViewModel)
+        public ActionResult Index(BaseProject.Admin.ViewModels.CodeMain.Index  searchViewModel)
         {
             service.ProcessIndexViewModel(searchViewModel);
             

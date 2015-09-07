@@ -61,6 +61,7 @@
     <Compile Include="Base\ISearchViewModelBase.cs" />
     <Compile Include="Business\IBusiness.cs" />
     <Compile Include="Business\IDeleteManyToManyProcess.cs" />
+    <Compile Include="Log\ILog.cs" />
     <Compile Include="Mapper\IHaveCustomMapping.cs" />
     <Compile Include="Mapper\IMapFrom.cs" />
     <Compile Include="Repository\IRepository.cs" />

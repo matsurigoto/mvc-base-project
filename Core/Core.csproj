@@ -52,10 +52,12 @@
     <None Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    <Reference Include="Autofac, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.4.0\lib\net40\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Autofac.Integration.Mvc">
+    <Reference Include="Autofac.Integration.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper">
@@ -83,6 +85,13 @@
     </Reference>
     <Reference Include="MvcSiteMapProvider.WebActivator">
       <HintPath>..\packages\MvcSiteMapProvider.MVC5.4.6.18\lib\net45\MvcSiteMapProvider.WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.1.0\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="NPOI">
       <HintPath>..\packages\NPOI.2.1.3.1\lib\net40\NPOI.dll</HintPath>
@@ -147,6 +156,7 @@
   <ItemGroup>
     <Compile Include="Base\CoreBaseController.cs" />
     <Compile Include="Business\DeleteManyToManyProcess.cs" />
+    <Compile Include="Log\NlogLogger.cs" />
     <Compile Include="Security\Filter\AuthoriseFilter.cs" />
     <Compile Include="Security\Filter\ResourceOperationAuthorisation.cs" />
     <Compile Include="Security\ResourceOperationCollectionBase.cs" />
@@ -163,6 +173,7 @@
     <Compile Include="Repository\EFUnitOfWork.cs" />
     <Compile Include="Repository\RepositoryQuery.cs" />
     <Compile Include="Utility\AssemblyTypes.cs" />
+    <Compile Include="Utility\AutofacBootstrapper.cs" />
     <Compile Include="Utility\Config.cs" />
     <Compile Include="Utility\ExportExcel\ExportExcelActionResult.cs" />
     <Compile Include="Utility\ExportExcel\ExportExcelUsingNPOIActionResult.cs" />
@@ -174,6 +185,7 @@
     <Compile Include="Utility\Paging\PagingHelper.cs" />
     <Compile Include="Utility\Paging\SearchViewModelProcess.cs" />
     <Compile Include="Utility\ReflectionHelper.cs" />
+    <Compile Include="Utility\TaskBootStrapper.cs" />
     <Compile Include="Utility\ValidationError\Exception\DatabaseValidationErrors.cs" />
     <Compile Include="Utility\ValidationError\Exception\ValidationErrors.cs" />
     <Compile Include="Utility\ValidationError\GeneralError.cs" />

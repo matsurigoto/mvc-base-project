@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BaseProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Code">
+          <Key>
+            <PropertyRef Name="SN" />
+          </Key>
+          <Property Name="SN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MainID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Display" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CodeMain">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateDate" Type="date" Nullable="false" />
+          <Property Name="LastModifyBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifyDate" Type="date" />
+        </EntityType>
+        <Association Name="FK_Code_CodeMain">
+          <End Role="CodeMain" Type="Self.CodeMain" Multiplicity="1" />
+          <End Role="Code" Type="Self.Code" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodeMain">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Code">
+              <PropertyRef Name="MainID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BaseProjectModelStoreContainer">
+          <EntitySet Name="Code" EntityType="Self.Code" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CodeMain" EntityType="Self.CodeMain" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Code_CodeMain" Association="Self.FK_Code_CodeMain">
+            <End Role="CodeMain" EntitySet="CodeMain" />
+            <End Role="Code" EntitySet="Code" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BaseProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Code">
+          <Key>
+            <PropertyRef Name="SN" />
+          </Key>
+          <Property Name="SN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MainID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Display" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderBy" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CodeMain" Relationship="Self.FK_Code_CodeMain" FromRole="Code" ToRole="CodeMain" />
+        </EntityType>
+        <EntityType Name="CodeMain">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastModifyBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastModifyDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Code" Relationship="Self.FK_Code_CodeMain" FromRole="CodeMain" ToRole="Code" />
+        </EntityType>
+        <Association Name="FK_Code_CodeMain">
+          <End Role="CodeMain" Type="Self.CodeMain" Multiplicity="1" />
+          <End Role="Code" Type="Self.Code" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodeMain">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Code">
+              <PropertyRef Name="MainID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BaseProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Code" EntityType="Self.Code" />
+          <EntitySet Name="CodeMain" EntityType="Self.CodeMain" />
+          <AssociationSet Name="FK_Code_CodeMain" Association="Self.FK_Code_CodeMain">
+            <End Role="CodeMain" EntitySet="CodeMain" />
+            <End Role="Code" EntitySet="Code" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BaseProjectModelStoreContainer" CdmEntityContainer="BaseProjectEntities">
+          <EntitySetMapping Name="Code">
+            <EntityTypeMapping TypeName="BaseProjectModel.Code">
+              <MappingFragment StoreEntitySet="Code">
+                <ScalarProperty Name="SN" ColumnName="SN" />
+                <ScalarProperty Name="MainID" ColumnName="MainID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Display" ColumnName="Display" />
+                <ScalarProperty Name="OrderBy" ColumnName="OrderBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CodeMain">
+            <EntityTypeMapping TypeName="BaseProjectModel.CodeMain">
+              <MappingFragment StoreEntitySet="CodeMain">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="LastModifyBy" ColumnName="LastModifyBy" />
+                <ScalarProperty Name="LastModifyDate" ColumnName="LastModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -12,7 +12,7 @@ namespace Core.Security
     /// 代表目前這個站台所有的Route對應的Resource和Operation。
     /// 此實作應該以DI用static的方式注入。
     /// </summary>
-    public abstract class ResourceOperationCollectionBase : IResourceOperationCollection
+    public class ResourceOperationCollectionBase : IResourceOperationCollection
     {
         /// <summary>
         /// 這個站台的Resource和Operation。
