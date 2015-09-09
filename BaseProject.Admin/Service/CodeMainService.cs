@@ -1,8 +1,6 @@
 ﻿using Core.Common.Business;
 using Core.Common.Repository;
 using Core.Service;
-using BaseProject.Admin.Service;
-using BaseProject.Admin.Models;
 
 
 namespace BaseProject.Admin.Service

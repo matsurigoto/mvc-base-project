@@ -42,6 +42,17 @@
           <Property Name="ResourceName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Operation" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="UserLoginLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="AttempTime" Type="datetime" Nullable="false" />
+          <Property Name="IP" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="StatusDisplayString" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Code_CodeMain">
           <End Role="CodeMain" Type="Self.CodeMain" Multiplicity="1" />
           <End Role="Code" Type="Self.Code" Multiplicity="*" />
@@ -59,6 +70,7 @@
           <EntitySet Name="Code" EntityType="Self.Code" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CodeMain" EntityType="Self.CodeMain" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RolesOperationPermission" EntityType="Self.RolesOperationPermission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserLoginLog" EntityType="Self.UserLoginLog" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Code_CodeMain" Association="Self.FK_Code_CodeMain">
             <End Role="CodeMain" EntitySet="CodeMain" />
             <End Role="Code" EntitySet="Code" />
@@ -112,6 +124,7 @@
           </AssociationSet>
           <EntitySet Name="AspNetRoles" EntityType="BaseProjectModel.AspNetRoles" />
           <EntitySet Name="RolesOperationPermission" EntityType="BaseProjectModel.RolesOperationPermission" />
+          <EntitySet Name="UserLoginLog" EntityType="BaseProjectModel.UserLoginLog" />
         </EntityContainer>
         <EntityType Name="AspNetRoles">
           <Key>
@@ -128,6 +141,17 @@
           <Property Name="RoleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="ResourceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Operation" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserLoginLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttempTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="StatusDisplayString" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -172,6 +196,18 @@
                 <ScalarProperty Name="Operation" ColumnName="Operation" />
                 <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLoginLog">
+            <EntityTypeMapping TypeName="BaseProjectModel.UserLoginLog">
+              <MappingFragment StoreEntitySet="UserLoginLog">
+                <ScalarProperty Name="StatusDisplayString" ColumnName="StatusDisplayString" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="AttempTime" ColumnName="AttempTime" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

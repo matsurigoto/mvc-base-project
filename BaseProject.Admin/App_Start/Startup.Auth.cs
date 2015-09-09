@@ -1,10 +1,11 @@
 ﻿using System;
+using BaseProject.Admin.ViewModels.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
-using BaseProject.Admin.Models;
+
 
 namespace BaseProject.Admin
 {

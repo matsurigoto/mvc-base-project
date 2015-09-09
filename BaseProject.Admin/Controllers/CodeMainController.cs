@@ -1,23 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
-using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using Core.Mapper;
-using Core.Common.Repository;
-using Core.Utility.Paging;
 using Core.Utility.ValidationError;
 using Core.Utility.Alert;
-using MvcSiteMapProvider;
-using System.Diagnostics;
-using Core.Common.Security;
 using Core.Base;
 using BaseProject.Admin.Service;
 using BaseProject.Admin.ViewModels.CodeMain;
-using BaseProject.Admin.Models;
+
 
 
 namespace BaseProject.Admin.Controllers

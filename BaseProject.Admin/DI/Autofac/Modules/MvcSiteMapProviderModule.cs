@@ -4,7 +4,6 @@ using System.Web.Mvc;
 using System.Web.Hosting;
 using System.Reflection;
 using Autofac;
-using HotSpring.Admin.DI;
 using MvcSiteMapProvider;
 using MvcSiteMapProvider.Builder;
 using MvcSiteMapProvider.Caching;
@@ -13,7 +12,7 @@ using MvcSiteMapProvider.Visitor;
 using MvcSiteMapProvider.Web.Mvc;
 using MvcSiteMapProvider.Web.UrlResolver;
 using MvcSiteMapProvider.Xml;
-using BaseProject.Admin.DI.Autofac.Modules;
+
 
 namespace BaseProject.Admin.DI.Autofac.Modules
 {

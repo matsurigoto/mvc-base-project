@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace HotSpring.Admin.DI
+namespace BaseProject.Admin.DI
 {
     internal class CommonConventions
     {
