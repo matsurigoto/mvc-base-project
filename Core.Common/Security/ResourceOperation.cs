@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Core.Common.Security;
-
-namespace Core.Common.Security
+﻿namespace Core.Common.Security
 {
     /// <summary>
     /// 代表站台某一個Resource的名字和Operation需要的權限

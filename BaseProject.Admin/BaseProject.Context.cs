@@ -27,5 +27,7 @@ namespace BaseProject.Admin
     
         public virtual DbSet<Code> Code { get; set; }
         public virtual DbSet<CodeMain> CodeMain { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<RolesOperationPermission> RolesOperationPermission { get; set; }
     }
 }

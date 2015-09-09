@@ -8,6 +8,8 @@
         <EntityTypeShape EntityType="BaseProjectModel.Code" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseProjectModel.CodeMain" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="BaseProjectModel.FK_Code_CodeMain" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BaseProjectModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="BaseProjectModel.RolesOperationPermission" Width="1.5" PointX="2.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

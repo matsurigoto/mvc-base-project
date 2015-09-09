@@ -157,6 +157,7 @@
     <Compile Include="Base\CoreBaseController.cs" />
     <Compile Include="Business\DeleteManyToManyProcess.cs" />
     <Compile Include="Log\NlogLogger.cs" />
+    <Compile Include="Security\AuthorizationManager\ResourceOperationAuthorisationManager.cs" />
     <Compile Include="Security\Filter\AuthoriseFilter.cs" />
     <Compile Include="Security\Filter\ResourceOperationAuthorisation.cs" />
     <Compile Include="Security\ResourceOperationCollectionBase.cs" />

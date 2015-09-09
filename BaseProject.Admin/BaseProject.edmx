@@ -4,7 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BaseProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BaseProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
         <EntityType Name="Code">
           <Key>
             <PropertyRef Name="SN" />
@@ -26,6 +33,15 @@
           <Property Name="LastModifyBy" Type="nvarchar" MaxLength="50" />
           <Property Name="LastModifyDate" Type="date" />
         </EntityType>
+        <EntityType Name="RolesOperationPermission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ResourceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Operation" Type="int" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Code_CodeMain">
           <End Role="CodeMain" Type="Self.CodeMain" Multiplicity="1" />
           <End Role="Code" Type="Self.Code" Multiplicity="*" />
@@ -39,15 +55,16 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="BaseProjectModelStoreContainer">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Code" EntityType="Self.Code" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CodeMain" EntityType="Self.CodeMain" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RolesOperationPermission" EntityType="Self.RolesOperationPermission" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Code_CodeMain" Association="Self.FK_Code_CodeMain">
             <End Role="CodeMain" EntitySet="CodeMain" />
             <End Role="Code" EntitySet="Code" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BaseProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -93,7 +110,25 @@
             <End Role="CodeMain" EntitySet="CodeMain" />
             <End Role="Code" EntitySet="Code" />
           </AssociationSet>
+          <EntitySet Name="AspNetRoles" EntityType="BaseProjectModel.AspNetRoles" />
+          <EntitySet Name="RolesOperationPermission" EntityType="BaseProjectModel.RolesOperationPermission" />
         </EntityContainer>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RolesOperationPermission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Operation" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -120,6 +155,24 @@
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="LastModifyBy" ColumnName="LastModifyBy" />
                 <ScalarProperty Name="LastModifyDate" ColumnName="LastModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="BaseProjectModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolesOperationPermission">
+            <EntityTypeMapping TypeName="BaseProjectModel.RolesOperationPermission">
+              <MappingFragment StoreEntitySet="RolesOperationPermission">
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
