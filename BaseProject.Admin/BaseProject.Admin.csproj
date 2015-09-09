@@ -208,6 +208,9 @@
     <Compile Include="AspNetRoles.cs">
       <DependentUpon>BaseProject.tt</DependentUpon>
     </Compile>
+    <Compile Include="AspNetUsers.cs">
+      <DependentUpon>BaseProject.tt</DependentUpon>
+    </Compile>
     <Compile Include="BaseProject.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -81,7 +81,7 @@ namespace BaseProject.Admin.ViewModels.Account
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("BaseProjectEntities", throwIfV1Schema: false)
         {
             Database.SetInitializer<ApplicationDbContext>(new ApplicationDbInitializer());
         }

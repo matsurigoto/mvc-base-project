@@ -30,5 +30,6 @@ namespace BaseProject.Admin
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<RolesOperationPermission> RolesOperationPermission { get; set; }
         public virtual DbSet<UserLoginLog> UserLoginLog { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
     }
 }
