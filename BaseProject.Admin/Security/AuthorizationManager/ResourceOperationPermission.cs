@@ -93,17 +93,17 @@ namespace BaseProject.Admin.Security.AuthorizationManager
         {
             bool authorized = false;
 
-            //var roleIds = GetRoleIdFromRoleNames(roleNames);
+            var roleIds = GetRoleIdFromRoleNames(roleNames);
 
-            //foreach (var item in roleIds)
-            //{
-            //    authorized = Authorize(resource, item);
+            foreach (var item in roleIds)
+            {
+                authorized = Authorize(resource, item);
 
-            //    if (authorized == true)
-            //    {
-            //        break;
-            //    }
-            //}
+                if (authorized == true)
+                {
+                    break;
+                }
+            }
 
             return authorized;
         }
@@ -113,11 +113,11 @@ namespace BaseProject.Admin.Security.AuthorizationManager
         /// </summary>
         /// <param name="roleNames">群組名稱清單</param>
         /// <returns>符合的群組Id清單</returns>
-        //public string[] GetRoleIdFromRoleNames(string[] roleNames)
-        //{
-        //    var roleIds = uow.Repository<AspNetRoles>().Reads().Where(x => roleNames.Contains(x.Name)).Select(x => x.Id).ToArray();
-        //    return roleIds;
-        //}
+        public string[] GetRoleIdFromRoleNames(string[] roleNames)
+        {
+            var roleIds = uow.Repository<AspNetRoles>().Reads().Where(x => roleNames.Contains(x.Name)).Select(x => x.Id).ToArray();
+            return roleIds;
+        }
 
         /// <summary>
         /// 用群組名稱，取得群組Id
@@ -126,10 +126,10 @@ namespace BaseProject.Admin.Security.AuthorizationManager
         /// <returns>
         /// 符合的群組Id
         /// </returns>
-        //public string GetRoleIdFromRoleName(string roleName)
-        //{
-        //    return GetRoleIdFromRoleNames(new string[] { roleName }).FirstOrDefault();
-        //}
+        public string GetRoleIdFromRoleName(string roleName)
+        {
+            return GetRoleIdFromRoleNames(new string[] { roleName }).FirstOrDefault();
+        }
 
         /// <summary>
         /// 驗證是否有權限使用某個資源
