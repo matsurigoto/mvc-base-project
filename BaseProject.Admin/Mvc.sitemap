@@ -3,8 +3,26 @@
             xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
             xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
 
-  <mvcSiteMapNode title="Home" controller="Home" action="Index" Resource="Home" Operation="Read">
-    <mvcSiteMapNode title="About" controller="Home" action="About" Resource="Home" Operation="Read"/>
+  <mvcSiteMapNode title="後台" controller="Home" action="Index" Resource="Home" Operation="Read">
+    <mvcSiteMapNode title="群組維護" controller="RolesAdmin" action="Index" clickable="false" Resource="RolesAdmin" Operation="Read">
+      <mvcSiteMapNode title="條列頁" action="Index" Resource="RolesAdmin" Operation="Read" />
+      <mvcSiteMapNode title="新增" action="Create" Resource="RolesAdmin" Operation="Create" />
+      <mvcSiteMapNode title="修改" action="Edit" Resource="RolesAdmin" Operation="Update" visibility="SiteMapPathHelper,!*"/>
+      <mvcSiteMapNode title="刪除" action="Delete" Resource="RolesAdmin" Operation="Delete" visibility="SiteMapPathHelper,!*" />
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="使用者維護" controller="UsersAdmin" action="Index" clickable="false" Resource="UsersAdmin" Operation="Read">
+      <mvcSiteMapNode title="條列頁" action="Index" Resource="UsersAdmin" Operation="Read" />
+      <mvcSiteMapNode title="新增" action="Create" Resource="UsersAdmin" Operation="Create" />
+      <mvcSiteMapNode title="修改" action="Edit" Resource="UsersAdmin" Operation="Update" visibility="SiteMapPathHelper,!*"/>
+      <mvcSiteMapNode title="刪除" action="Delete" Resource="UsersAdmin" Operation="Delete" visibility="SiteMapPathHelper,!*" />
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="使用功能記錄" controller="UserOperationLog" action="Index" clickable="true" Resource="UserOperationLog" Operation="Read">
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="使用者登入記錄" controller="UserLoginLog" action="Index" clickable="true" Resource="UserLoginLog" Operation="Read">
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="個人資料維護" controller="Manage" action="UserProfile" clickable="false" visibility="SiteMapPathHelper,!*">
+    </mvcSiteMapNode>
+    
   </mvcSiteMapNode>
 
 </mvcSiteMap>
