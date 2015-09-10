@@ -9,7 +9,7 @@ namespace BaseProject.Admin.ViewModels.CodeMain
     {
     }
 
-    public class SearchResult : IMapFrom<Admin.CodeMain>
+    public class SearchResult : IMapFrom<Model.CodeMain>
     {
         [DisplayName("代碼主檔Id")]
         public string ID { get; set; }
@@ -18,7 +18,7 @@ namespace BaseProject.Admin.ViewModels.CodeMain
         public string Name { get; set; }
     }
 
-    public class SearchFormViewModel : SearchFormViewModelBase<Admin.CodeMain>
+    public class SearchFormViewModel : SearchFormViewModelBase<Model.CodeMain>
     {
         [DisplayName("代碼主檔Id")]
         public string ID { get; set; }

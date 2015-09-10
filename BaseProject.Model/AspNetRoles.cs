@@ -7,18 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BaseProject.Admin
+namespace BaseProject.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class UserLoginLog
+    public partial class AspNetRoles
     {
-        public int Id { get; set; }
-        public string UserName { get; set; }
-        public System.DateTime AttempTime { get; set; }
-        public string IP { get; set; }
-        public Core.Common.Security.EnumLoginStatus Status { get; set; }
-        public string StatusDisplayString { get; set; }
+        public AspNetRoles()
+        {
+            this.AspNetUsers = new HashSet<AspNetUsers>();
+        }
+    
+        public string Id { get; set; }
+        public string Name { get; set; }
+    
+        public virtual ICollection<AspNetUsers> AspNetUsers { get; set; }
     }
 }

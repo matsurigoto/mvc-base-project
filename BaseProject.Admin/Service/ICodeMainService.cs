@@ -1,4 +1,5 @@
-﻿using Core.Common.Service;
+﻿using BaseProject.Model;
+using Core.Common.Service;
 
 
 namespace BaseProject.Admin.Service

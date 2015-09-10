@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\Duran\Project\BaseProject\mvc-base-project\BaseProject.Admin\BaseProject.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Duran\BaseProject\mvc-base-project\BaseProject.Model\BaseProject.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

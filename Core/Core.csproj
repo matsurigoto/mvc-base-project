@@ -149,6 +149,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaseProject.Model\BaseProject.Model.csproj">
+      <Project>{f3f372be-d142-47bd-8cc5-86dbbe15e388}</Project>
+      <Name>BaseProject.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core.Common\Core.Common.csproj">
       <Project>{c9b0c421-b7c4-4101-803d-ebd4264219eb}</Project>
       <Name>Core.Common</Name>
@@ -159,6 +163,7 @@
     <Compile Include="Business\DeleteManyToManyProcess.cs" />
     <Compile Include="Log\NlogLogger.cs" />
     <Compile Include="Security\AuthorizationManager\ResourceOperationAuthorisationManager.cs" />
+    <Compile Include="Security\EnumFlagsModelBinder.cs" />
     <Compile Include="Security\Filter\AuthoriseFilter.cs" />
     <Compile Include="Security\Filter\ResourceOperationAuthorisation.cs" />
     <Compile Include="Security\ResourceOperationCollectionBase.cs" />

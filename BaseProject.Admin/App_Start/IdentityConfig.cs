@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using BaseProject.Admin.ViewModels.Account;
+using BaseProject.Model;
 using Core.Common.Repository;
 using Core.Repository;
 using Microsoft.AspNet.Identity;

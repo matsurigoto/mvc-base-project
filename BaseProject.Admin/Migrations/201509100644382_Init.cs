@@ -3,7 +3,7 @@ namespace BaseProject.Admin.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Name : DbMigration
+    public partial class Init : DbMigration
     {
         public override void Up()
         {

@@ -7,12 +7,15 @@ using System.Reflection;
 using Autofac;
 using BaseProject.Admin.Controllers;
 using BaseProject.Admin.Service;
+using BaseProject.Model;
 using Core.Business;
 using Core.Common.Business;
 using Core.Common.Security;
 using BaseProject.Admin.DI.Autofac.Modules;
+using Core.Common.ValidationError;
 using Core.Security;
 using Core.Security.Filter;
+using Core.Utility.ValidationError;
 using MvcSiteMapProvider;
 using MvcSiteMapProvider.Loader;
 
@@ -27,7 +30,7 @@ namespace BaseProject.Admin
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             //BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //ModelBinders.Binders.Add(typeof(ResourceOperationEnum), new EnumFlagsModelBinder());
+            ModelBinders.Binders.Add(typeof(ResourceOperationEnum), new EnumFlagsModelBinder());
 
             var builder = Core.Utility.AutofacBootstrapper.Bootstrap(new List<Assembly>() { typeof(CodeMainController).Assembly });
             builder.RegisterModule(new MvcSiteMapProviderModule());
@@ -36,7 +39,12 @@ namespace BaseProject.Admin
             builder.RegisterType<BaseProjectEntities>().As<DbContext>().InstancePerRequest();
 
             ////CRUD serivce
-            //builder.RegisterType<DeleteManyToManyProcess>().As<IDeleteManyToManyProcess>().InstancePerRequest();
+            //builder.RegisterType<HttpFileProcessBusiness>().As<IHttpFileProcessBusiness>().InstancePerRequest();
+            builder.RegisterType<DeleteManyToManyProcess>().As<IDeleteManyToManyProcess>().InstancePerRequest();
+
+            //model
+            builder.RegisterType<ModelStateDictionary>().As<ModelStateDictionary>().InstancePerRequest();
+            builder.RegisterType<ModelStateWrapper>().As<IValidationDictionary>().InstancePerRequest();
 
             ////controller serivce
             //builder.RegisterType<CodeMainService>().As<ICodeMainService>().InstancePerRequest();
@@ -46,6 +54,7 @@ namespace BaseProject.Admin
             builder.RegisterType<ResourceOperationCollectionBase>().As<IResourceOperationCollection>().SingleInstance();
             builder.RegisterType<ResourceOperationAuthorisation>().As<ResourceOperationAuthorisation>().SingleInstance();
 
+            //builder.RegisterType<UserOpertationLogService>().AsImplementedInterfaces().InstancePerRequest();
 
             Core.Utility.AutofacBootstrapper.SetMvcDependencyResolver(builder.Build());
             // Setup global sitemap loader (required)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Net;
 using System.Web.Mvc;
+using BaseProject.Model;
 using Core.Utility.ValidationError;
 using Core.Utility.Alert;
 using Core.Base;

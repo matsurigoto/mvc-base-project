@@ -19,11 +19,11 @@ namespace BaseProject.Admin.ViewModels.CodeMain
 
         public void CreateMappings(AutoMapper.IConfiguration configuration)
         {
-            configuration.CreateMap<Edit, Admin.CodeMain>()
+            configuration.CreateMap<Edit, Model.CodeMain>()
                 .ForMember(m => m.LastModifyDate, opt => opt.UseValue(DateTime.Now))
                 .ForMember(m => m.LastModifyBy, opt => opt.UseValue("Admin")); // TODO: change to real user once authorisation is done.
 
-            configuration.CreateMap<Admin.CodeMain, Edit>();
+            configuration.CreateMap<Model.CodeMain, Edit>();
         }
     }
 }

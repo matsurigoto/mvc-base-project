@@ -1,4 +1,5 @@
-﻿using Core.Common.Business;
+﻿using BaseProject.Model;
+using Core.Common.Business;
 using Core.Common.Repository;
 using Core.Service;
 

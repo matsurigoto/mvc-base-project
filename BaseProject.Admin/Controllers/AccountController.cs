@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BaseProject.Admin.ViewModels.Account;
+using BaseProject.Model;
 using Core.Utility.Extension;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -113,11 +114,11 @@ namespace BaseProject.Admin.Controllers
 
         private void SaveUserLoginLog(UserLoginLog log, Core.Common.Security.EnumLoginStatus status)
         {
-            //log.Status = status;
-            //log.StatusDisplayString = log.Status.DisplayName();
+            log.Status = status;
+            log.StatusDisplayString = log.Status.DisplayName();
 
-            //DB.Repository<UserLoginLog>().Create(log);
-            //DB.Save();
+            DB.Repository<UserLoginLog>().Create(log);
+            DB.Save();
         }
 
         //

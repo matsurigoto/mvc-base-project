@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BaseProject.Model;
 using Core.Common.Security;
 using Core.Common.Repository;
 using MvcSiteMapProvider;
@@ -94,58 +95,58 @@ namespace Core.Security.Filter
         /// <param name="httpContext">The HTTP context.</param>
         protected virtual void ProcessResourceOperation(ResourceOperation resourceOpertation, HttpContextBase httpContext)
         {
-            //var currentIdentity = httpContext.User.Identity as ClaimsIdentity;
+            var currentIdentity = httpContext.User.Identity as ClaimsIdentity;
 
-            //if (currentIdentity.FindFirst(ClaimTypes.NameIdentifier) != null)
-            //{
+            if (currentIdentity.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
 
-            //    var routeData = httpContext.Request.RequestContext.RouteData;
+                var routeData = httpContext.Request.RequestContext.RouteData;
 
-            //    var area = routeData.Values.ContainsKey("area") == true ? routeData.GetRequiredString("area") : string.Empty;
-            //    var controller = routeData.GetRequiredString("controller");
-            //    var action = routeData.GetRequiredString("action");
+                var area = routeData.Values.ContainsKey("area") == true ? routeData.GetRequiredString("area") : string.Empty;
+                var controller = routeData.GetRequiredString("controller");
+                var action = routeData.GetRequiredString("action");
 
-            //    var operationLog = new UserOperationLog()
-            //    {
-            //        Area = area,
-            //        Action = action,
-            //        Controller = controller,
-            //        VisitDateTime = DateTime.Now,
-            //        RawUrl = httpContext.Request.RawUrl,
-            //        UserId = currentIdentity.FindFirst(ClaimTypes.NameIdentifier).Value,
-            //        IP = httpContext.Request.ServerVariables["REMOTE_ADDR"]
-            //    };
+                var operationLog = new UserOperationLog()
+                {
+                    Area = area,
+                    Action = action,
+                    Controller = controller,
+                    VisitDateTime = DateTime.Now,
+                    RawUrl = httpContext.Request.RawUrl,
+                    UserId = currentIdentity.FindFirst(ClaimTypes.NameIdentifier).Value,
+                    IP = httpContext.Request.ServerVariables["REMOTE_ADDR"]
+                };
 
-            //    if (resourceOpertation != null)
-            //    {
-            //        operationLog.Operation = resourceOpertation.Operation;
-            //        operationLog.Resource = resourceOpertation.ResourceName;
-            //        operationLog.ResourceName = resourceOpertation.DisplayNameWithParent;
+                if (resourceOpertation != null)
+                {
+                    operationLog.Operation = resourceOpertation.Operation;
+                    operationLog.Resource = resourceOpertation.ResourceName;
+                    operationLog.ResourceName = resourceOpertation.DisplayNameWithParent;
 
-            //    }
-            //    else
-            //    {
-            //        var siteMap = SiteMaps.Current.RootNode.Descendants.Where(x =>
-            //            x.Controller == controller && x.Area == area && x.Action == action).FirstOrDefault();
+                }
+                else
+                {
+                    var siteMap = SiteMaps.Current.RootNode.Descendants.Where(x =>
+                        x.Controller == controller && x.Area == area && x.Action == action).FirstOrDefault();
 
-            //        var resourceName = string.Empty;
+                    var resourceName = string.Empty;
 
-            //        if (siteMap != null)
-            //        {
-            //            resourceName = siteMap.Title;
+                    if (siteMap != null)
+                    {
+                        resourceName = siteMap.Title;
 
-            //            if (siteMap.ParentNode != null)
-            //            {
-            //                resourceName = siteMap.ParentNode.Title + "/" + resourceName;
-            //            }
-            //        }
+                        if (siteMap.ParentNode != null)
+                        {
+                            resourceName = siteMap.ParentNode.Title + "/" + resourceName;
+                        }
+                    }
 
-            //        operationLog.ResourceName = resourceName;
-            //    }
+                    operationLog.ResourceName = resourceName;
+                }
 
-            //    DB.Repository<UserOperationLog>().Create(operationLog);
-            //    DB.Save();
-            //}
+                DB.Repository<UserOperationLog>().Create(operationLog);
+                DB.Save();
+            }
         }
     }
 }

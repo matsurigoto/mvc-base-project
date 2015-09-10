@@ -7,7 +7,7 @@ using System.Web;
 
 namespace BaseProject.Admin.ViewModels.CodeMain
 {
-    public class Detail : IMapFrom<Admin.CodeMain>
+    public class Detail : IMapFrom<Model.CodeMain>
     {
         [DisplayName("代碼主檔Id")]
         public string ID { get; set; }

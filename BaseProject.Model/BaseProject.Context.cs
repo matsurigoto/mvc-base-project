@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BaseProject.Admin
+namespace BaseProject.Model
 {
     using System;
     using System.Data.Entity;
@@ -32,7 +32,7 @@ namespace BaseProject.Admin
         public virtual DbSet<Code> Code { get; set; }
         public virtual DbSet<CodeMain> CodeMain { get; set; }
         public virtual DbSet<RolesOperationPermission> RolesOperationPermission { get; set; }
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<UserLoginLog> UserLoginLog { get; set; }
+        public virtual DbSet<UserOperationLog> UserOperationLog { get; set; }
     }
 }

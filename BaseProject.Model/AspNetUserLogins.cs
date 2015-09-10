@@ -7,16 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BaseProject.Admin
+namespace BaseProject.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class RolesOperationPermission
+    public partial class AspNetUserLogins
     {
-        public int Id { get; set; }
-        public string RoleId { get; set; }
-        public string ResourceName { get; set; }
-        public Core.Common.Security.ResourceOperationEnum Operation { get; set; }
+        public string LoginProvider { get; set; }
+        public string ProviderKey { get; set; }
+        public string UserId { get; set; }
+    
+        public virtual AspNetUsers AspNetUsers { get; set; }
     }
 }
