@@ -80,16 +80,16 @@ namespace BaseProject.Admin.Controllers
             log.IP = Request.ServerVariables["REMOTE_ADDR"];
             log.UserName = model.UserName;
 
-            //var user = UserManager.FindByName(model.UserName);
+            var user = UserManager.FindByName(model.UserName);
 
-            //if (user != null && user.IsEnabled == false)
-            //{
-            //    ModelState.AddModelError("", "此帳號已經被取消啟用，請聯絡管理人員來啟用帳號");
+            if (user != null && user.IsEnabled == false)
+            {
+                ModelState.AddModelError("", "此帳號已經被取消啟用，請聯絡管理人員來啟用帳號");
 
-            //    SaveUserLoginLog(log, Core.Common.Security.EnumLoginStatus.NotEnabled);
+                SaveUserLoginLog(log, Core.Common.Security.EnumLoginStatus.NotEnabled);
 
-            //    return View(model);
-            //}
+                return View(model);
+            }
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
@@ -113,11 +113,11 @@ namespace BaseProject.Admin.Controllers
 
         private void SaveUserLoginLog(UserLoginLog log, Core.Common.Security.EnumLoginStatus status)
         {
-            log.Status = status;
-            log.StatusDisplayString = log.Status.DisplayName();
+            //log.Status = status;
+            //log.StatusDisplayString = log.Status.DisplayName();
 
-            DB.Repository<UserLoginLog>().Create(log);
-            DB.Save();
+            //DB.Repository<UserLoginLog>().Create(log);
+            //DB.Save();
         }
 
         //

@@ -25,11 +25,14 @@ namespace BaseProject.Admin
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<Code> Code { get; set; }
         public virtual DbSet<CodeMain> CodeMain { get; set; }
-        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<RolesOperationPermission> RolesOperationPermission { get; set; }
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<UserLoginLog> UserLoginLog { get; set; }
-        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
     }
 }

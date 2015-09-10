@@ -5,13 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="87e54edc79a146ff883c9475a76681f3" Name="Diagram1">
-        <EntityTypeShape EntityType="BaseProjectModel.Code" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseProjectModel.CodeMain" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="BaseProjectModel.FK_Code_CodeMain" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="BaseProjectModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="BaseProjectModel.RolesOperationPermission" Width="1.5" PointX="2.75" PointY="4.75" />
-        <EntityTypeShape EntityType="BaseProjectModel.UserLoginLog" Width="1.5" PointX="5.375" PointY="0.75" />
-        <EntityTypeShape EntityType="BaseProjectModel.AspNetUsers" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="BaseProjectModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="2.875" />
+        <EntityTypeShape EntityType="BaseProjectModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="4" />
+        <EntityTypeShape EntityType="BaseProjectModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="1.5" />
+        <EntityTypeShape EntityType="BaseProjectModel.AspNetUsers" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="BaseProjectModel.Code" Width="1.5" PointX="8" PointY="7" />
+        <EntityTypeShape EntityType="BaseProjectModel.CodeMain" Width="1.5" PointX="5.75" PointY="7" />
+        <EntityTypeShape EntityType="BaseProjectModel.RolesOperationPermission" Width="1.5" PointX="0.75" PointY="7.75" />
+        <AssociationConnector Association="BaseProjectModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="BaseProjectModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="BaseProjectModel.FK_Code_CodeMain" />
+        <AssociationConnector Association="BaseProjectModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="BaseProjectModel.C__MigrationHistory" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BaseProjectModel.UserLoginLog" Width="1.5" PointX="7.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
