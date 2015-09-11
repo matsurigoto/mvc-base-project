@@ -23,7 +23,7 @@ namespace BaseProject.Admin.Controllers
         public ActionResult Index(BaseProject.Admin.ViewModels.CodeMain.Index  searchViewModel)
         {
             service.ProcessIndexViewModel(searchViewModel);
-            return View(searchViewModel).;
+            return View(searchViewModel);
         }
 
         // GET: CodeMain/Details/5
