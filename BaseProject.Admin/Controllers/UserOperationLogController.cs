@@ -1,4 +1,4 @@
-﻿using BaseProject.Admin.Service;
+﻿using BaseProject.Service;
 using BaseProject.Admin.ViewModels.UserOperationLog;
 using Core.Base;
 using Core.Common.Repository;

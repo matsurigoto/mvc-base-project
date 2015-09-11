@@ -3,7 +3,7 @@ using Core.Common.Business;
 using Core.Common.Repository;
 using Core.Service;
 
-namespace BaseProject.Admin.Service
+namespace BaseProject.Service
 {
     public class UserOpertationLogService : GenericService<UserOperationLog>, IUserOpertationLogService
     {

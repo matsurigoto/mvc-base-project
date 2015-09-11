@@ -2,7 +2,7 @@
 using Core.Common.Service;
 
 
-namespace BaseProject.Admin.Service
+namespace BaseProject.Service
 {
     public interface ICodeMainService : IService<CodeMain>
     {

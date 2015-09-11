@@ -4,7 +4,7 @@ using Core.Common.Repository;
 using Core.Service;
 
 
-namespace BaseProject.Admin.Service
+namespace BaseProject.Service
 {
     public class CodeMainService : GenericService<CodeMain>, ICodeMainService
     {
