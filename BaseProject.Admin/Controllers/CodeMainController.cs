@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Net;
+﻿using System.Net;
 using System.Web.Mvc;
 using BaseProject.Model;
 using Core.Utility.ValidationError;
@@ -9,8 +6,6 @@ using Core.Utility.Alert;
 using Core.Base;
 using BaseProject.Admin.Service;
 using BaseProject.Admin.ViewModels.CodeMain;
-
-
 
 namespace BaseProject.Admin.Controllers
 {
@@ -28,8 +23,7 @@ namespace BaseProject.Admin.Controllers
         public ActionResult Index(BaseProject.Admin.ViewModels.CodeMain.Index  searchViewModel)
         {
             service.ProcessIndexViewModel(searchViewModel);
-            
-            return View(searchViewModel);
+            return View(searchViewModel).;
         }
 
         // GET: CodeMain/Details/5

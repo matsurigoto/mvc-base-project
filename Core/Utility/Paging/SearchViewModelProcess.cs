@@ -79,7 +79,6 @@ namespace Core.Utility.Paging
             Common.Base.ISearchViewModelBase<TSearchForm, TPageResult> searchForm) where TSearchForm : Common.Base.ISearchFormViewModelBase, new()
         {
             data = data.DynamicOrderBy(searchForm.SearchForm);
-
             searchForm.Result = data.Project().To<TPageResult>().ToPagedList(searchForm.SearchForm.Page, searchForm.SearchForm.PageSize);
         }
     }

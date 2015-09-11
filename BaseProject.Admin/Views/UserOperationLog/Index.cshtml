@@ -1,0 +1,78 @@
+﻿@using Core.Utility.Paging
+@using PagedList.Mvc
+@model BaseProject.Admin.ViewModels.UserOperationLog.Index
+
+@{
+    ViewBag.SharedFunctionTitle = "使用功能記錄";
+    ViewBag.SharedFunctionName = "條列頁";
+}
+
+@Html.EditorFor(x => x.SearchForm)
+<button id="test">匯出</button>
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">搜索結果</h3>
+    </div>
+    <div class="box-body">
+        <table class="table table-hover">
+            <tr>
+                <th>
+                    @Html.EditorFor(x => x.SelectedId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Result.FirstOrDefault().UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Result.FirstOrDefault().VisitDateTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Result.FirstOrDefault().IP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Result.FirstOrDefault().ResourceName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Result.FirstOrDefault().OperationDisplayName)
+                </th>
+            </tr>
+
+            @foreach (var item in Model.Result)
+            {
+                <tr>
+                    <td>
+                        @Html.EditorFor(modelItem => modelItem.SeletedIdInList, new { id = item.Id })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VisitDateTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResourceName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OperationDisplayName)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="box-footer">
+        @if (Model.Result.PageCount > 1)
+        {
+            @Html.PagedListPager(Model.Result, page =>
+             {
+                 return Url.Action("Index", PagingHelper.GenRVDBaseOnSearchFormModel(Model.SearchForm, page));
+             });
+        }
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/TypeScript/RecordSelectCheckbox.js"></script>
+}

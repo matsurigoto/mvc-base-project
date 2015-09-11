@@ -11,7 +11,6 @@
         /// <value>
         /// 
         /// </value>
-        /*
         public virtual SelectListFill.SelectListViewModel[] NeedFillSelectList
         {
             get
@@ -19,6 +18,6 @@
                 return null;
             }
         }
-        */
+        
     }
 }

@@ -167,6 +167,10 @@
     <Compile Include="Security\Filter\AuthoriseFilter.cs" />
     <Compile Include="Security\Filter\ResourceOperationAuthorisation.cs" />
     <Compile Include="Security\ResourceOperationCollectionBase.cs" />
+    <Compile Include="SelectListFill\CoreSelectListViewModelHelper.cs" />
+    <Compile Include="SelectListFill\FillSelectListActionFilterBase.cs" />
+    <Compile Include="SelectListFill\SelectListViewModel.cs" />
+    <Compile Include="SelectListFill\SelectListViewModelHelper.cs.cs" />
     <Compile Include="Service\GenericService.cs" />
     <Compile Include="Utility\Alert\AlertDecoratorActionResult.cs" />
     <Compile Include="Utility\Alert\AlertExtension.cs" />
@@ -182,6 +186,7 @@
     <Compile Include="Utility\AssemblyTypes.cs" />
     <Compile Include="Utility\AutofacBootstrapper.cs" />
     <Compile Include="Utility\Config.cs" />
+    <Compile Include="Utility\CoreExpressionHelper.cs" />
     <Compile Include="Utility\ExportExcel\ExportExcelActionResult.cs" />
     <Compile Include="Utility\ExportExcel\ExportExcelUsingNPOIActionResult.cs" />
     <Compile Include="Utility\ExportExcel\Extension\IEnumerableExtension.cs" />

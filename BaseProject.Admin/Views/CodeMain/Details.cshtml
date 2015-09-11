@@ -1,0 +1,60 @@
+﻿@model BaseProject.Admin.ViewModels.CodeMain.Detail
+
+@{
+    ViewBag.SharedFunctionTitle = "代碼主檔維護";
+    ViewBag.SharedFunctionName = "詳細";
+}
+<div>
+    <div class="box box-primary">
+        <div class="box-header">
+        </div>
+        <div class="box-body">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreateDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CreateDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreateBy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CreateBy)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastModifyBy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LastModifyBy)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastModifyDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LastModifyDate)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("修改", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("回清單", "Index")
+</p>

@@ -8,6 +8,7 @@ using Autofac;
 using BaseProject.Admin.Controllers;
 using BaseProject.Admin.Service;
 using BaseProject.Model;
+using Core.AutofacModule;
 using Core.Business;
 using Core.Common.Business;
 using Core.Common.Security;
@@ -16,7 +17,6 @@ using Core.Common.ValidationError;
 using Core.Security;
 using Core.Security.Filter;
 using Core.Utility.ValidationError;
-using MvcSiteMapProvider;
 using MvcSiteMapProvider.Loader;
 
 namespace BaseProject.Admin
@@ -28,7 +28,9 @@ namespace BaseProject.Admin
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            //BundleConfig.RegisterBundles(BundleTable.Bundles);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            
 
             ModelBinders.Binders.Add(typeof(ResourceOperationEnum), new EnumFlagsModelBinder());
 
@@ -47,14 +49,16 @@ namespace BaseProject.Admin
             builder.RegisterType<ModelStateWrapper>().As<IValidationDictionary>().InstancePerRequest();
 
             ////controller serivce
-            //builder.RegisterType<CodeMainService>().As<ICodeMainService>().InstancePerRequest();
-            ////builder.RegisterType<CodeService>().As<ICodeService>().InstancePerRequest();
+            builder.RegisterType<UserOpertationLogService>().AsImplementedInterfaces().InstancePerRequest();
+            //builder.RegisterType<UserOpertationLogService>().AsImplementedInterfaces().InstancePerRequest();
+            builder.RegisterType<CodeMainService>().As<ICodeMainService>().InstancePerRequest();
+            //builder.RegisterType<CodeService>().As<ICodeService>().InstancePerRequest();
 
             //resource serivce
             builder.RegisterType<ResourceOperationCollectionBase>().As<IResourceOperationCollection>().SingleInstance();
             builder.RegisterType<ResourceOperationAuthorisation>().As<ResourceOperationAuthorisation>().SingleInstance();
 
-            //builder.RegisterType<UserOpertationLogService>().AsImplementedInterfaces().InstancePerRequest();
+
 
             Core.Utility.AutofacBootstrapper.SetMvcDependencyResolver(builder.Build());
             // Setup global sitemap loader (required)
