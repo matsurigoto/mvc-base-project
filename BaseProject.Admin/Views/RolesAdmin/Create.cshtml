@@ -1,0 +1,56 @@
+﻿@model BaseProject.Admin.Security.ViewModel.Create
+@using Core.Security
+
+@{
+    ViewBag.SharedFunctionTitle = "群組維護";
+    ViewBag.SharedFunctionName = "條列頁";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RoleName, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.RoleName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RoleName)
+        </div>
+        <br />
+        <div class="col-md-10">
+            權限設定 <label><input id="chkCheckAllId" type="checkbox" />全選</label>
+            <ul>
+                @for (int i = 0; i < Model.ResourceOperation.Count; i++)
+                {
+                    <li>
+                        @Html.DisplayFor(x => x.ResourceOperation[i].DisplayName)
+                        @Html.HiddenFor(x => x.ResourceOperation[i].ResourceName)
+                        @Html.CheckBoxesForEnumFlagsFor(x => x.ResourceOperation[i].Operation, false, new { @class = "chkEachCheck" })
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-6">
+            <input type="submit" value="新增" class="btn btn-primary" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("回到清單", "Index")
+</div>
+
+@section Scripts {
+<script src="~/Scripts/TypeScript/CheckAllCheckbox.js"></script>
+    <script>
+        $(function () {
+          CheckAllCheckbox.init();
+        })
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

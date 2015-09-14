@@ -92,6 +92,9 @@
     <Reference Include="Microsoft.Owin.Security.OAuth">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
+    <Reference Include="MoreLinq">
+      <HintPath>..\packages\morelinq.1.1.1\lib\net35\MoreLinq.dll</HintPath>
+    </Reference>
     <Reference Include="MvcSiteMapProvider">
       <HintPath>..\packages\MvcSiteMapProvider.MVC5.Core.4.6.18\lib\net45\MvcSiteMapProvider.dll</HintPath>
       <Private>True</Private>
@@ -222,6 +225,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CodeMainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\UserLoginLogController.cs" />
     <Compile Include="Controllers\UserOperationLogController.cs" />
     <Compile Include="DI\Autofac\Modules\CustomAclModule.cs" />
     <Compile Include="DI\Autofac\Modules\MvcModule.cs" />
@@ -251,6 +256,7 @@
     <Compile Include="ViewModels\CodeMain\Edit.cs" />
     <Compile Include="ViewModels\CodeMain\Index.cs" />
     <Compile Include="ViewModels\Code\Index.cs" />
+    <Compile Include="ViewModels\UserLoginLog\Index.cs" />
     <Compile Include="ViewModels\UserOperationLog\Index.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +297,13 @@
     <Content Include="Views\CodeMain\Edit.cshtml" />
     <Content Include="Views\CodeMain\Index.cshtml" />
     <Content Include="Views\Shared\_Alert.cshtml" />
+    <Content Include="Views\RolesAdmin\Create.cshtml" />
+    <Content Include="Views\RolesAdmin\Delete.cshtml" />
+    <Content Include="Views\RolesAdmin\Details.cshtml" />
+    <Content Include="Views\RolesAdmin\Edit.cshtml" />
+    <Content Include="Views\RolesAdmin\Index.cshtml" />
+    <Content Include="Views\Shared\_IndexCreate.cshtml" />
+    <Content Include="Views\UserLoginLog\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

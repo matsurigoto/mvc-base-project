@@ -1,0 +1,12 @@
+﻿@model dynamic
+@{
+    var href = Model as string;
+
+    if (string.IsNullOrEmpty(href))
+    {
+        href = Url.Action("Create");
+    }
+}
+<a class="btn btn-app" href="@href">
+    <i class="fa fa-edit"></i> 新增
+</a>

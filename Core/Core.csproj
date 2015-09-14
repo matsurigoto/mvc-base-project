@@ -166,6 +166,7 @@
     <Compile Include="Security\EnumFlagsModelBinder.cs" />
     <Compile Include="Security\Filter\AuthoriseFilter.cs" />
     <Compile Include="Security\Filter\ResourceOperationAuthorisation.cs" />
+    <Compile Include="Security\HtmlHelper.cs" />
     <Compile Include="Security\ResourceOperationCollectionBase.cs" />
     <Compile Include="SelectListFill\CoreSelectListViewModelHelper.cs" />
     <Compile Include="SelectListFill\FillSelectListActionFilterBase.cs" />

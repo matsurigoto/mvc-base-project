@@ -1,0 +1,61 @@
+﻿@using PagedList.Mvc
+@model BaseProject.Admin.ViewModels.UserLoginLog.Index
+
+@{
+    ViewBag.SharedFunctionTitle = "使用者登入記錄";
+    ViewBag.SharedFunctionName = "條列頁";
+}
+
+@Html.EditorFor(x => x.SearchForm)
+
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">搜索結果</h3>
+    </div>
+    <div class="box-body">
+        <table class="table table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Result.FirstOrDefault().UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Result.FirstOrDefault().AttempTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Result.FirstOrDefault().IP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Result.FirstOrDefault().StatusDisplayString)
+                </th>
+            </tr>
+
+            @foreach (var item in Model.Result)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AttempTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StatusDisplayString)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <div class="box-footer">
+        @if (Model.Result.PageCount > 1)
+        {
+            @Html.PagedListPager(Model.Result, page =>
+             {
+                 return Url.Action("Index", PagingHelper.GenRVDBaseOnSearchFormModel(Model.SearchForm, page));
+             });
+        }
+    </div>
+</div>

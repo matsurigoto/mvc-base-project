@@ -16,13 +16,23 @@
       <mvcSiteMapNode title="修改" action="Edit" Resource="UsersAdmin" Operation="Update" visibility="SiteMapPathHelper,!*"/>
       <mvcSiteMapNode title="刪除" action="Delete" Resource="UsersAdmin" Operation="Delete" visibility="SiteMapPathHelper,!*" />
     </mvcSiteMapNode>
+    <mvcSiteMapNode title="代碼主檔維護" controller="CodeMain" clickable="false" Resource="CodeMain" Operation="Read">
+      <mvcSiteMapNode title="條列頁" action="Index" Resource="CodeMain" Operation="Read"/>
+      <mvcSiteMapNode title="新增" action="Create" Resource="CodeMain" Operation="Create"/>
+      <mvcSiteMapNode title="修改" action="Edit" Resource="CodeMain" Operation="Update" visibility="SiteMapPathHelper,!*"/>
+      <mvcSiteMapNode title="刪除" action="Delete" Resource="CodeMain" Operation="Delete" visibility="SiteMapPathHelper,!*"/>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="代碼維護" controller="Code" clickable="false" Resource="Code" Operation="Read" visibility="SiteMapPathHelper,!*">
+      <mvcSiteMapNode title="條列頁" action="Index" Resource="Code" Operation="Read"/>
+      <mvcSiteMapNode title="新增" action="Create" Resource="Code" Operation="Create"/>
+      <mvcSiteMapNode title="修改" action="Edit" Resource="Code" Operation="Update" visibility="SiteMapPathHelper,!*"/>
+      <mvcSiteMapNode title="刪除" action="Delete" Resource="Code" Operation="Delete" visibility="SiteMapPathHelper,!*"/>
+    </mvcSiteMapNode>
     <mvcSiteMapNode title="使用功能記錄" controller="UserOperationLog" action="Index" clickable="true" Resource="UserOperationLog" Operation="Read">
     </mvcSiteMapNode>
     <mvcSiteMapNode title="使用者登入記錄" controller="UserLoginLog" action="Index" clickable="true" Resource="UserLoginLog" Operation="Read">
     </mvcSiteMapNode>
     <mvcSiteMapNode title="個人資料維護" controller="Manage" action="UserProfile" clickable="false" visibility="SiteMapPathHelper,!*">
     </mvcSiteMapNode>
-    
   </mvcSiteMapNode>
-
 </mvcSiteMap>

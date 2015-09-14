@@ -1,0 +1,73 @@
+﻿@model BaseProject.Admin.Security.ViewModel.Detail
+@using Core.Security
+
+@{
+    ViewBag.SharedFunctionTitle = "群組維護";
+    ViewBag.SharedFunctionName = "詳細";
+}
+
+<div>
+    <div class="box box-primary">
+        <div class="box-header">
+        </div>
+        <div class="box-body">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.RoleName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.RoleName)
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div class="box box-primary">
+    <div class="box-header">
+        群組權限
+    </div>
+    <div class="box-body">
+        <ul>
+            @for (int i = 0; i < Model.ResourceOperation.Count; i++)
+            {
+                <li>
+                    @Html.DisplayFor(x => x.ResourceOperation[i].DisplayName)
+                    @Html.CheckBoxesForEnumFlagsFor(x => x.ResourceOperation[i].Operation, true)
+                </li>
+            }
+        </ul>
+</div>
+</div>
+
+<div class="box box-primary">
+    <div class="box-header">
+        群組所擁有的使用者
+    </div>
+    <div class="box-body">
+        @if (Model.Users.Count == 0)
+        {
+            <hr />
+            <p>使用者不在任何群組裡面</p>
+        }
+        <table class="table">
+
+            @foreach (var item in Model.Users)
+            {
+                <tr>
+                    <td>
+                        @item.Value
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("修改", "Edit", new { id = Model.RoleId }) |
+    @Html.ActionLink("回清單", "Index")
+</p>
+
+
+
+
