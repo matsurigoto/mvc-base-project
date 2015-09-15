@@ -1,0 +1,80 @@
+﻿@model BaseProject.Admin.ViewModels.Account.ApplicationUser
+
+@{
+    ViewBag.SharedFunctionTitle = "使用者維護";
+    ViewBag.SharedFunctionName = "詳細";
+}
+
+<div>
+    <div class="box box-primary">
+        <div class="box-header">
+        </div>
+        <div class="box-body">
+            <dl class="dl-horizontal">
+                <dt>
+                    @*@Html.DisplayNameFor(model => model.UserName)*@
+                    使用者帳號
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.UserName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Unit)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Unit)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IsEnabled)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.IsEnabled)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="box box-primary">
+        <div class="box-header">
+            使用者所在的群組
+        </div>
+        <div class="box-body">
+            @if (ViewBag.RoleNames.Count == 0)
+            {
+                <hr />
+                <p>使用者不在任何群組裡面</p>
+            }
+            <table class="table">
+
+                @foreach (var item in ViewBag.RoleNames)
+                {
+                    <tr>
+                        <td>
+                            @item
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("修改", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("回清單", "Index")
+</p>
+
+
+

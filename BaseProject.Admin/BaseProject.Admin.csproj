@@ -223,11 +223,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CodeController.cs" />
     <Compile Include="Controllers\CodeMainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\UserLoginLogController.cs" />
     <Compile Include="Controllers\UserOperationLogController.cs" />
+    <Compile Include="Controllers\UsersAdminController.cs" />
     <Compile Include="DI\Autofac\Modules\CustomAclModule.cs" />
     <Compile Include="DI\Autofac\Modules\MvcModule.cs" />
     <Compile Include="DI\Autofac\Modules\MvcSiteMapProviderModule.cs" />
@@ -255,6 +258,9 @@
     <Compile Include="ViewModels\CodeMain\Detail.cs" />
     <Compile Include="ViewModels\CodeMain\Edit.cs" />
     <Compile Include="ViewModels\CodeMain\Index.cs" />
+    <Compile Include="ViewModels\Code\Create.cs" />
+    <Compile Include="ViewModels\Code\Detail.cs" />
+    <Compile Include="ViewModels\Code\Edit.cs" />
     <Compile Include="ViewModels\Code\Index.cs" />
     <Compile Include="ViewModels\UserLoginLog\Index.cs" />
     <Compile Include="ViewModels\UserOperationLog\Index.cs" />
@@ -304,6 +310,23 @@
     <Content Include="Views\RolesAdmin\Index.cshtml" />
     <Content Include="Views\Shared\_IndexCreate.cshtml" />
     <Content Include="Views\UserLoginLog\Index.cshtml" />
+    <Content Include="Views\Code\Create.cshtml" />
+    <Content Include="Views\Code\Delete.cshtml" />
+    <Content Include="Views\Code\Details.cshtml" />
+    <Content Include="Views\Code\Edit.cshtml" />
+    <Content Include="Views\Code\Index.cshtml" />
+    <Content Include="Views\UsersAdmin\Create.cshtml" />
+    <Content Include="Views\UsersAdmin\Delete.cshtml" />
+    <Content Include="Views\UsersAdmin\Details.cshtml" />
+    <Content Include="Views\UsersAdmin\Edit.cshtml" />
+    <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\UserProfile.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

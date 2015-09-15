@@ -39,7 +39,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Service\CodeMainService.cs" />
+    <Compile Include="Service\CodeService.cs" />
     <Compile Include="Service\ICodeMainService.cs" />
+    <Compile Include="Service\ICodeService.cs" />
     <Compile Include="Service\IUserOpertationLogService.cs" />
     <Compile Include="Service\UserOpertationLogService.cs" />
   </ItemGroup>
@@ -56,6 +58,9 @@
       <Project>{7a0a682a-0d95-4131-856b-afd3447f1101}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

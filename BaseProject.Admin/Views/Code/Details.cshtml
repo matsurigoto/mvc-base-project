@@ -1,0 +1,54 @@
+﻿@model BaseProject.Admin.ViewModels.Code.Detail
+
+@{
+    ViewBag.SharedFunctionTitle = "代碼維護";
+    ViewBag.SharedFunctionName = "詳細";
+}
+
+<div>
+    <div class="box box-primary">
+        <div class="box-header">
+        </div>
+        <div class="box-body">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Value)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Value)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Display)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Display)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.OrderBy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.OrderBy)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CodeMain.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CodeMain.Name)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("修改", "Edit", new { id = Model.SN }) |
+    @Html.ActionLink("回清單", "Index")
+</p>

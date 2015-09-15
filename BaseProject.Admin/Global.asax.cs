@@ -49,9 +49,8 @@ namespace BaseProject.Admin
 
             ////controller serivce
             builder.RegisterType<UserOpertationLogService>().AsImplementedInterfaces().InstancePerRequest();
-            //builder.RegisterType<UserOpertationLogService>().AsImplementedInterfaces().InstancePerRequest();
             builder.RegisterType<CodeMainService>().As<ICodeMainService>().InstancePerRequest();
-            //builder.RegisterType<CodeService>().As<ICodeService>().InstancePerRequest();
+            builder.RegisterType<CodeService>().As<ICodeService>().InstancePerRequest();
 
             //resource serivce
             builder.RegisterType<ResourceOperationCollectionBase>().As<IResourceOperationCollection>().SingleInstance();

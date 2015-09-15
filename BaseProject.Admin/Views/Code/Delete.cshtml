@@ -1,0 +1,60 @@
+﻿@model BaseProject.Admin.ViewModels.Code.Detail
+
+@{
+    ViewBag.SharedFunctionTitle = "代碼維護";
+    ViewBag.SharedFunctionName = "刪除";
+}
+
+<div>
+    <div class="box box-primary">
+        <div class="box-header">
+            <h3 class="box-title">確認是否要刪除這一筆資料</h3>
+        </div>
+        <div class="box-body">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Value)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Value)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Display)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Display)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.OrderBy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.OrderBy)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.CodeMain.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CodeMain.Name)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="刪除" class="btn btn-danger" /> |
+        @Html.ActionLink("回到清單", "Index")
+    </div>
+}
